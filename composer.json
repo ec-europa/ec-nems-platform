@@ -1,0 +1,7 @@
+{
+    "name": "ec-europa/ec-nems-platform",
+    "description": "Modules, features and theme sourcecode for the nems platform",
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
