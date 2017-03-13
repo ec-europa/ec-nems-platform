@@ -5,7 +5,7 @@ MAKE="resources/site.make"
 TYPE="nems"
 VERSION="~1.0"
 
-# Expand lib folder with reps-platform.
+# Expand lib folder with nems-platform.
 if [ ! -e $JSON ] ; then
   composer init --working-dir="lib"
   composer require "ec-europa/ec-$TYPE-platform:$VERSION" --working-dir="lib"
@@ -38,10 +38,10 @@ if [ -d "lib/vendor/ec-europa/ec-$TYPE-platform" ] ; then
     mv $MAKE".example" $MAKE;
   elif [ -e $MAKE ] ; then
     COMMENT="\n\n; ============="
-    COMMENT="$COMMENT\n; ${TYPE^} platform"
+    COMMENT="$COMMENT\n; Platform for $TYPE"
     COMMENT="$COMMENT\n; =============\n"
-    INCLUDE='includes[] = "$TYPE-platform.make"'
-    grep -q "$INCLUDE" "$MAKE" || echo "$COMMENT$INCLUDE" >> "$MAKE"
+    INCLUDE='includes[] = "'$TYPE'-platform.make"'
+    grep -qF "$INCLUDE" "$MAKE" || echo "$COMMENT$INCLUDE" >> "$MAKE"
   else
     echo "No site.make file found, $TYPE-platform.make not included!"
   fi
