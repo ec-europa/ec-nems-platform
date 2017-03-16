@@ -353,7 +353,7 @@ function nems_core_wysiwyg_view_file($filetoken) {
  * Implements hook_module_implements_alter().
  */
 function nems_core_module_implements_alter(&$implementations, $hook) {
-  if ($hook == 'form_alter') {
+  if ($hook == 'form_alter' && isset($implementations['nems_core'])) {
     $group = $implementations['nems_core'];
     unset($implementations['nems_core']);
     $implementations['nems_core'] = $group;
