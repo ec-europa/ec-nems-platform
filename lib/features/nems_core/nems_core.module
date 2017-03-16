@@ -350,25 +350,31 @@ function nems_core_wysiwyg_view_file($filetoken) {
 }
 
 /**
- * Implements hook_module_implements_alter().
- */
-function nems_core_module_implements_alter(&$implementations, $hook) {
-  if ($hook == 'form_alter' && isset($implementations['nems_core'])) {
-    $group = $implementations['nems_core'];
-    unset($implementations['nems_core']);
-    $implementations['nems_core'] = $group;
-  }
-}
-
-/**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function nems_core_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // Call a 'private' implemenation of nems_core_form_node_form_alter().
+  $form['#after_build'][] = '_nems_core_form_node_form_alter';
+}
+
+/**
+ * Called by nems_core_form_node_form_alter().
+ *
+ * @param array $form
+ *   The form definition.
+ * @param array $form_state
+ *   The form state.
+ *
+ * @return mixed
+ *   The new form definition.
+ */
+function _nems_core_form_node_form_alter($form, &$form_state) {
   if (isset($form['language'])) {
     // Ensure correct language list (no disabled languages should be present).
     $languages = i18n_node_language_list($form['#node']);
     $form['language']['#options'] = $languages;
   }
+  return $form;
 }
 
 /**
