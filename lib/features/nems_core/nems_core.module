@@ -33,7 +33,7 @@ function nems_core_nexteuropa_token_token_handlers() {
   // This is shared functionality with mbp_sync, so we check for conflict.
   if (!class_exists('Drupal\mbp_sync\FileUrlTokenHandler')) {
     return array(
-      'handler_name' => '\Drupal\nems_core\FileUrlTokenHandler',
+      'handler_name' => '\Drupal\nems_core\NemsCoreFileUrlTokenHandler',
     );
   }
 }

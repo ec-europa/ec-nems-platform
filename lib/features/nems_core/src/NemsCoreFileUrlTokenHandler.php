@@ -3,7 +3,7 @@
 
 /**
  * @file
- * Contains \Drupal\nems_core\FileUrlTokenHandler.
+ * Contains \Drupal\nems_core\NemsCoreFileUrlTokenHandler.
  */
 
 namespace Drupal\nems_core;
@@ -13,7 +13,7 @@ namespace Drupal\nems_core;
  *
  * @package Drupal\mbp_sync
  */
-class FileUrlTokenHandler implements \Drupal\nexteuropa_token\TokenHandlerInterface {
+class NemsCoreFileUrlTokenHandler implements \Drupal\nexteuropa_token\TokenHandlerInterface {
 
   /**
    * {@inheritdoc}
