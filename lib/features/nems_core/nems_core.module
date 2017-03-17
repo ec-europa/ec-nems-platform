@@ -30,9 +30,12 @@ const NEMS_CORE_BLOCK_ACCESS_PERMISSIONS = array(
  * Implements hook_nexteuropa_token_token_handlers().
  */
 function nems_core_nexteuropa_token_token_handlers() {
-  return array(
-    'handler_name' => '\Drupal\nems_core\FileUrlTokenHandler',
-  );
+  // This is shared functionality with mbp_sync, so we check for conflict.
+  if (!class_exists('Drupal\mbp_sync\FileUrlTokenHandler')) {
+    return array(
+      'handler_name' => '\Drupal\nems_core\FileUrlTokenHandler',
+    );
+  }
 }
 
 /**
