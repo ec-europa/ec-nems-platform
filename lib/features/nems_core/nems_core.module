@@ -31,7 +31,7 @@ const NEMS_CORE_BLOCK_ACCESS_PERMISSIONS = array(
  */
 function nems_core_nexteuropa_token_token_handlers() {
   return array(
-    'handler_name' => '\Drupal\nems_core\FileUrlTokenHandler',
+    'nems_core_file_url_handler' => '\Drupal\nems_core\NemsCoreFileUrlTokenHandler',
   );
 }
 
@@ -350,25 +350,26 @@ function nems_core_wysiwyg_view_file($filetoken) {
 }
 
 /**
- * Implements hook_module_implements_alter().
- */
-function nems_core_module_implements_alter(&$implementations, $hook) {
-  if ($hook == 'form_alter') {
-    $group = $implementations['nems_core'];
-    unset($implementations['nems_core']);
-    $implementations['nems_core'] = $group;
-  }
-}
-
-/**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function nems_core_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // Call a 'private' implemenation of nems_core_form_node_form_alter().
+  $form['#after_build'][] = '_nems_core_form_node_form_after_build';
+}
+
+/**
+ * After build function to change the language options.
+ *
+ * @see nems_core_form_node_form_alter().
+ * @see i18n_node_form_node_form_alter().
+ */
+function _nems_core_form_node_form_after_build($form, &$form_state) {
   if (isset($form['language'])) {
     // Ensure correct language list (no disabled languages should be present).
     $languages = i18n_node_language_list($form['#node']);
     $form['language']['#options'] = $languages;
   }
+  return $form;
 }
 
 /**
