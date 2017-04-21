@@ -155,4 +155,4 @@ features_exclude[dependencies][media_wysiwyg] = media_wysiwyg
 features_exclude[dependencies][token_filter] = token_filter
 multisite_version = 2.2
 registry_autoload[] = PSR-4
-registry_autoload_files[] = Drupal/nems_core/FileUrlTokenHandler.php
+registry_autoload_files[] = Drupal/nems_core/NemsCoreFileUrlTokenHandler.php
