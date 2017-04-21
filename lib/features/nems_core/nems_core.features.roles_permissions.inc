@@ -182,6 +182,7 @@ function nems_core_default_roles_permissions() {
       'view all blocks' => TRUE,
       'view bean page' => TRUE,
       'view bean revisions' => TRUE,
+      'upload webtools custom js' => TRUE,
     ),
   );
 
@@ -562,6 +563,7 @@ function nems_core_default_roles_permissions() {
       'view revisions' => TRUE,
       'view scheduled content' => TRUE,
       'view the administration theme' => TRUE,
+      'upload webtools custom js' => TRUE,
     ),
   );
 
