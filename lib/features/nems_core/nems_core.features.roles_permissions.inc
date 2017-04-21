@@ -375,6 +375,7 @@ function nems_core_default_roles_permissions() {
       'access media browser' => TRUE,
       'access site reports' => TRUE,
       'access the block administration page' => TRUE,
+      'access broken links report' => TRUE,
       'add media from remote sources' => TRUE,
       'add terms in classification' => TRUE,
       'add terms in media_folders' => TRUE,
