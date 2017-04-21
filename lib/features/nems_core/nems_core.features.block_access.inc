@@ -199,8 +199,7 @@ function nems_core_block_access_defaults() {
       21 => 'move',
       22 => 'view',
     ),
-  );
-  'manage blocks' => array(
+    'manage blocks' => array(
       0 => 'config',
       1 => 'config_body',
       2 => 'config_desc',
