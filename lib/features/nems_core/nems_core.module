@@ -294,24 +294,6 @@ function _nems_core_filefield_source_reference_get_files($filename, $instance = 
  * Implements hook_menu().
  */
 function nems_core_menu() {
-  // Admin_menu does not render menu items allowed by menu_admin_per_menu,
-  // So as a work around I add them back like this.
-  $menus = menu_get_menus();
-  $webmaster_menus = array('menu-breadcrumb-menu', 'menu-service-tools');
-
-  foreach ($webmaster_menus as $mid) {
-    $menu = menu_load($mid);
-    $items['admin/structure/menu/manage/' . $mid . '/list'] = array(
-      'title' => $menus[$mid],
-      'page callback' => 'drupal_get_form',
-      'page arguments' => array('menu_overview_form', $menu),
-      'access callback' => '_nems_core_menu_item_access',
-      'access arguments' => array($menu),
-      'file' => 'menu.admin.inc',
-      'file path' => drupal_get_path('module', 'menu'),
-    );
-  }
-
   $items['node/%node/%'] = array(
     'page callback' => 'nems_core_wysiwyg_view_file',
     'page arguments' => array(2),
@@ -320,6 +302,41 @@ function nems_core_menu() {
   );
 
   return $items;
+}
+
+function nems_core_admin_menu_output_build(&$content) {
+  global $user;
+  // Admin_menu does not render menu items allowed by menu_admin_per_menu,
+  // So as a work around I add them back like this.
+  if (isset($content['menu'])) {
+    $parent = &$content['menu']['admin/structure']['admin/structure/menu'];
+    $breadcrumb_path = 'admin/structure/menu/manage/menu-breadcrumb-menu';
+    $breadcrumb_perm = 'administer menu-breadcrumb-menu menu items';
+    $service_path = 'admin/structure/menu/manage/menu-service-tools';
+    $service_perm = 'administer menu-service-tools menu items';
+
+    if (!isset($parent[$breadcrumb_path]) && user_access($breadcrumb_perm, $user)) {
+      $parent[$breadcrumb_path] = array(
+        '#title' => t('Breadcrumb menu'),
+        '#href' => $breadcrumb_path,
+        '#options' => array(
+          'alias' => 1
+        ),
+        '#weight' => 0,
+      );
+    }
+
+    if (!isset($parent[$service_path]) && user_access($service_perm, $user)) {
+      $parent[$service_path] = array(
+        '#title' => t('Service tools'),
+        '#href' => $service_path,
+        '#options' => array(
+          'alias' => 1
+        ),
+        '#weight' => 0,
+      );
+    }
+  }
 }
 
 /**
