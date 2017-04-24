@@ -255,13 +255,13 @@ function nems_core_default_roles_permissions() {
       'assign manage files role' => TRUE,
       'assign manage main menu role' => TRUE,
       'assign manage users role' => TRUE,
-      'assign publish content role' => TRUE,
+      'assign manage content role' => TRUE,
     ),
   );
 
   // Exported role: publish content.
-  $roles['publish content'] = (object) array(
-    'name' => 'publish content',
+  $roles['manage content'] = (object) array(
+    'name' => 'manage content',
     'weight' => 7,
     'permissions' => array(
       'access administration menu' => TRUE,
@@ -417,7 +417,7 @@ function nems_core_default_roles_permissions() {
       'assign manage files role' => TRUE,
       'assign manage main menu role' => TRUE,
       'assign manage users role' => TRUE,
-      'assign publish content role' => TRUE,
+      'assign manage content role' => TRUE,
       'bypass workbench moderation' => TRUE,
       'change own username' => TRUE,
       'configure all block body fields' => TRUE,

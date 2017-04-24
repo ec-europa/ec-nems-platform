@@ -25,7 +25,7 @@ function nems_events_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -35,7 +35,7 @@ function nems_events_user_default_permissions() {
   $permissions['delete any nems_event content'] = array(
     'name' => 'delete any nems_event content',
     'roles' => array(
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -47,7 +47,7 @@ function nems_events_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -67,7 +67,7 @@ function nems_events_user_default_permissions() {
     'name' => 'edit any nems_event content',
     'roles' => array(
       'editor' => 'editor',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
@@ -79,7 +79,7 @@ function nems_events_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
