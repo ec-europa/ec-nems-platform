@@ -269,6 +269,7 @@ function nems_core_default_roles_permissions() {
       'access content overview' => TRUE,
       'access media browser' => TRUE,
       'administer content translations' => TRUE,
+      'administer nodes' => TRUE,
       'bypass workbench moderation' => TRUE,
       'create common_page content' => TRUE,
       'create files' => TRUE,

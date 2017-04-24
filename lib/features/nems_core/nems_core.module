@@ -304,6 +304,9 @@ function nems_core_menu() {
   return $items;
 }
 
+/**
+ *
+ */
 function nems_core_admin_menu_output_build(&$content) {
   global $user;
   // Admin_menu does not render menu items allowed by menu_admin_per_menu,
@@ -320,7 +323,7 @@ function nems_core_admin_menu_output_build(&$content) {
         '#title' => t('Breadcrumb menu'),
         '#href' => $breadcrumb_path,
         '#options' => array(
-          'alias' => 1
+          'alias' => 1,
         ),
         '#weight' => 0,
       );
@@ -331,7 +334,7 @@ function nems_core_admin_menu_output_build(&$content) {
         '#title' => t('Service tools'),
         '#href' => $service_path,
         '#options' => array(
-          'alias' => 1
+          'alias' => 1,
         ),
         '#weight' => 0,
       );
