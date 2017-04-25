@@ -10,7 +10,7 @@
 function nems_core_default_roles_permissions() {
   $roles = array();
 
-  // Exported role: contributor.
+  // Exported role: contributor
   $roles['contributor'] = (object) array(
     'name' => 'contributor',
     'weight' => 3,
@@ -68,7 +68,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: editor.
+  // Exported role: editor
   $roles['editor'] = (object) array(
     'name' => 'editor',
     'weight' => 4,
@@ -141,7 +141,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: manage blocks.
+  // Exported role: manage blocks
   $roles['manage blocks'] = (object) array(
     'name' => 'manage blocks',
     'weight' => 9,
@@ -185,7 +185,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: manage files.
+  // Exported role: manage files
   $roles['manage files'] = (object) array(
     'name' => 'manage files',
     'weight' => 8,
@@ -204,6 +204,7 @@ function nems_core_default_roles_permissions() {
       'delete own document files' => TRUE,
       'delete own image files' => TRUE,
       'delete own video files' => TRUE,
+      'delete terms in 3' => TRUE,
       'download any audio files' => TRUE,
       'download any document files' => TRUE,
       'download any image files' => TRUE,
@@ -220,6 +221,7 @@ function nems_core_default_roles_permissions() {
       'edit own document files' => TRUE,
       'edit own image files' => TRUE,
       'edit own video files' => TRUE,
+      'edit terms in 3' => TRUE,
       'use media wysiwyg' => TRUE,
       'view own files' => TRUE,
       'view own private files' => TRUE,
@@ -227,7 +229,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: manage main menu.
+  // Exported role: manage main menu
   $roles['manage main menu'] = (object) array(
     'name' => 'manage main menu',
     'weight' => 10,
@@ -240,7 +242,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: manage users.
+  // Exported role: manage users
   $roles['manage users'] = (object) array(
     'name' => 'manage users',
     'weight' => 6,
@@ -253,7 +255,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: publish content.
+  // Exported role: publish content
   $roles['publish content'] = (object) array(
     'name' => 'publish content',
     'weight' => 7,
@@ -353,7 +355,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: webmaster.
+  // Exported role: webmaster
   $roles['webmaster'] = (object) array(
     'name' => 'webmaster',
     'weight' => 5,
@@ -377,6 +379,7 @@ function nems_core_default_roles_permissions() {
       'add terms in nems_call_for_tenders_status' => TRUE,
       'add terms in nems_call_vacancy_status' => TRUE,
       'add terms in nems_events_categories' => TRUE,
+      'add terms in nems_file_categories' => TRUE,
       'add terms in nems_links_categories' => TRUE,
       'add terms in nems_news_categories' => TRUE,
       'add terms in nems_picture_gallery_categories' => TRUE,
@@ -473,6 +476,20 @@ function nems_core_default_roles_permissions() {
       'delete own video files' => TRUE,
       'delete own video_gallery content' => TRUE,
       'delete revisions' => TRUE,
+      'delete terms in 1' => TRUE,
+      'delete terms in 10' => TRUE,
+      'delete terms in 11' => TRUE,
+      'delete terms in 12' => TRUE,
+      'delete terms in 14' => TRUE,
+      'delete terms in 15' => TRUE,
+      'delete terms in 16' => TRUE,
+      'delete terms in 2' => TRUE,
+      'delete terms in 3' => TRUE,
+      'delete terms in 5' => TRUE,
+      'delete terms in 6' => TRUE,
+      'delete terms in 7' => TRUE,
+      'delete terms in 8' => TRUE,
+      'delete terms in 9' => TRUE,
       'download any audio files' => TRUE,
       'download any document files' => TRUE,
       'download any image files' => TRUE,
@@ -520,6 +537,20 @@ function nems_core_default_roles_permissions() {
       'edit own nems_vacancy content' => TRUE,
       'edit own video files' => TRUE,
       'edit own video_gallery content' => TRUE,
+      'edit terms in 1' => TRUE,
+      'edit terms in 10' => TRUE,
+      'edit terms in 11' => TRUE,
+      'edit terms in 12' => TRUE,
+      'edit terms in 14' => TRUE,
+      'edit terms in 15' => TRUE,
+      'edit terms in 16' => TRUE,
+      'edit terms in 2' => TRUE,
+      'edit terms in 3' => TRUE,
+      'edit terms in 5' => TRUE,
+      'edit terms in 6' => TRUE,
+      'edit terms in 7' => TRUE,
+      'edit terms in 8' => TRUE,
+      'edit terms in 9' => TRUE,
       'moderate content from draft to needs_review' => TRUE,
       'moderate content from needs_review to draft' => TRUE,
       'moderate content from needs_review to published' => TRUE,
@@ -564,33 +595,6 @@ function nems_core_default_roles_permissions() {
       'view the administration theme' => TRUE,
     ),
   );
-
-  $taxonomy_machine_names = array(
-    'media_folders',
-    'classification',
-    'tags',
-    'nems_video_gallery_categories',
-    'nems_call_vacancy_status',
-    'nems_publications_categories',
-    'nems_news_categories',
-    'nems_links_categories',
-    'nems_picture_gallery_categories',
-    'nems_events_categories',
-    'nems_call_for_tenders_status',
-    'nems_call_for_proposals_status',
-    'nems_call_for_externals_status',
-  );
-  foreach ($taxonomy_machine_names as $machine_name) {
-    $vocabulary = taxonomy_vocabulary_machine_name_load($machine_name);
-    if (!empty($vocabulary)) {
-      $roles['webmaster']->permissions["edit terms in {$vocabulary->vid}"] = TRUE;
-      $roles['webmaster']->permissions["delete terms in {$vocabulary->vid}"] = TRUE;
-    }
-  }
-
-  $vocabulary = taxonomy_vocabulary_machine_name_load('media_folders');
-  $roles['manage files']->permissions["edit terms in {$vocabulary->vid}"] = TRUE;
-  $roles['manage files']->permissions["delete terms in {$vocabulary->vid}"] = TRUE;
 
   return $roles;
 }
