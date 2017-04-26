@@ -590,6 +590,7 @@ function nems_core_default_roles_permissions() {
     'nems_links_categories',
     'nems_picture_gallery_categories',
     'nems_events_categories',
+    'nems_file_categories',
     'nems_call_for_tenders_status',
     'nems_call_for_proposals_status',
     'nems_call_for_externals_status',
