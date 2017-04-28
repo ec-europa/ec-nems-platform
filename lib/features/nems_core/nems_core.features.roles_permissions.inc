@@ -251,11 +251,14 @@ function nems_core_default_roles_permissions() {
       'access ecas import users function' => TRUE,
       'administer users' => TRUE,
       'change own username' => TRUE,
+      'assign contributor role' => TRUE,
+      'assign editor role' => TRUE,
       'assign manage blocks role' => TRUE,
       'assign manage files role' => TRUE,
       'assign manage main menu role' => TRUE,
       'assign manage users role' => TRUE,
       'assign manage content role' => TRUE,
+      'assign webmaster role' => TRUE,
     ),
   );
 
@@ -419,6 +422,7 @@ function nems_core_default_roles_permissions() {
       'assign manage main menu role' => TRUE,
       'assign manage users role' => TRUE,
       'assign manage content role' => TRUE,
+      'assign webmaster role' => TRUE,
       'bypass workbench moderation' => TRUE,
       'change own username' => TRUE,
       'configure all block body fields' => TRUE,
