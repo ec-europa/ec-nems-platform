@@ -333,62 +333,6 @@ function nems_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-audio-field_nems_file_category'.
-  $field_instances['file-audio-field_nems_file_category'] = array(
-    'bundle' => 'audio',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 1,
-      ),
-      'preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'simple_link' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'wysiwyg' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'file',
-    'field_name' => 'field_nems_file_category',
-    'label' => 'File Category',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 0,
-    ),
-  );
-
   // Exported field_instance: 'file-audio-field_tags'.
   $field_instances['file-audio-field_tags'] = array(
     'bundle' => 'audio',
@@ -445,19 +389,21 @@ function nems_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-document-field_nems_file_category'.
-  $field_instances['file-document-field_nems_file_category'] = array(
-    'bundle' => 'document',
+  // Exported field_instance: 'file-audio-og_group_ref'.
+  $field_instances['file-audio-og_group_ref'] = array(
+    'bundle' => 'audio',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
       ),
       'preview' => array(
         'label' => 'above',
@@ -485,17 +431,17 @@ function nems_core_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'file',
-    'field_name' => 'field_nems_file_category',
-    'label' => 'File Category',
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
     'required' => FALSE,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'options',
+      'module' => 'og',
       'settings' => array(),
-      'type' => 'options_buttons',
+      'type' => 'og_complex',
       'weight' => 0,
     ),
   );
@@ -556,19 +502,22 @@ function nems_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_nems_file_category'.
-  $field_instances['file-image-field_nems_file_category'] = array(
-    'bundle' => 'image',
+  // Exported field_instance: 'file-document-og_group_ref'.
+  $field_instances['file-document-og_group_ref'] = array(
+    'bundle' => 'document',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 4,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
       ),
       'preview' => array(
         'label' => 'above',
@@ -596,19 +545,38 @@ function nems_core_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'file',
-    'field_name' => 'field_nems_file_category',
-    'label' => 'File Category',
+    'entityconnect_show_add_icon' => 1,
+    'entityconnect_show_edit_icon' => 1,
+    'entityconnect_unload_add' => 0,
+    'entityconnect_unload_edit' => 0,
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'og',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 0,
+      'type' => 'og_complex',
+      'weight' => 42,
     ),
   );
 
@@ -668,18 +636,21 @@ function nems_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-video-field_nems_file_category'.
-  $field_instances['file-video-field_nems_file_category'] = array(
-    'bundle' => 'video',
+  // Exported field_instance: 'file-image-og_group_ref'.
+  $field_instances['file-image-og_group_ref'] = array(
+    'bundle' => 'image',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 5,
       ),
       'preview' => array(
@@ -708,19 +679,116 @@ function nems_core_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'file',
-    'field_name' => 'field_nems_file_category',
-    'label' => 'File Category',
+    'entityconnect_show_add_icon' => 1,
+    'entityconnect_show_edit_icon' => 1,
+    'entityconnect_unload_add' => 0,
+    'entityconnect_unload_edit' => 0,
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'og',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 8,
+      'type' => 'og_complex',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'file-video-og_group_ref'.
+  $field_instances['file-video-og_group_ref'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 6,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'simple_link' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'entityconnect_show_add_icon' => 1,
+    'entityconnect_show_edit_icon' => 1,
+    'entityconnect_unload_add' => 0,
+    'entityconnect_unload_edit' => 0,
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 0,
     ),
   );
 
@@ -728,7 +796,7 @@ function nems_core_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Block reference');
   t('Description');
-  t('File Category');
+  t('Groups audience');
   t('Link to More');
   t('Tags');
   t('The Title of the block.');

@@ -93,11 +93,8 @@ function nems_core_strongarm() {
   $strongarm->name = 'entity_translation_entity_types';
   $strongarm->value = array(
     'node' => 'node',
-    'bean' => 'bean',
     'taxonomy_term' => 'taxonomy_term',
-    'comment' => 0,
-    'file' => 0,
-    'user' => 0,
+    'bean' => 'bean',
   );
   $export['entity_translation_entity_types'] = $strongarm;
 
@@ -241,7 +238,7 @@ function nems_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'linkchecker_impersonate_user';
-  $strongarm->value = 'admin';
+  $strongarm->value = 'placeholder-for-uid-1';
   $export['linkchecker_impersonate_user'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -259,28 +256,28 @@ function nems_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'metatag_enable_file';
-  $strongarm->value = 0;
+  $strongarm->value = TRUE;
   $export['metatag_enable_file'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'metatag_enable_file__audio';
-  $strongarm->value = 0;
+  $strongarm->value = TRUE;
   $export['metatag_enable_file__audio'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'metatag_enable_file__document';
-  $strongarm->value = 0;
+  $strongarm->value = TRUE;
   $export['metatag_enable_file__document'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'metatag_enable_file__image';
-  $strongarm->value = 0;
+  $strongarm->value = TRUE;
   $export['metatag_enable_file__image'] = $strongarm;
 
   $strongarm = new stdClass();
