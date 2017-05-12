@@ -256,28 +256,28 @@ function nems_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'metatag_enable_file';
-  $strongarm->value = TRUE;
+  $strongarm->value = 0;
   $export['metatag_enable_file'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'metatag_enable_file__audio';
-  $strongarm->value = TRUE;
+  $strongarm->value = 0;
   $export['metatag_enable_file__audio'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'metatag_enable_file__document';
-  $strongarm->value = TRUE;
+  $strongarm->value = 0;
   $export['metatag_enable_file__document'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'metatag_enable_file__image';
-  $strongarm->value = TRUE;
+  $strongarm->value = 0;
   $export['metatag_enable_file__image'] = $strongarm;
 
   $strongarm = new stdClass();
