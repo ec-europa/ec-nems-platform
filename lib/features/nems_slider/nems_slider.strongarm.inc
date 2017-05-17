@@ -431,5 +431,12 @@ function nems_slider_strongarm() {
   $strongarm->value = 'draft';
   $export['workbench_moderation_default_state_slider'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_enable_node__nems_slide';
+  $strongarm->value = FALSE;
+  $export['metatag_enable_node__nems_slide'] = $strongarm;
+
   return $export;
 }

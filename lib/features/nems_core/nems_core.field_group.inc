@@ -13,6 +13,114 @@ function nems_core_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_editorial_team|file|audio|form';
+  $field_group->group_name = 'group_editorial_team';
+  $field_group->entity_type = 'file';
+  $field_group->bundle = 'audio';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Editorial Team',
+    'weight' => '4',
+    'children' => array(
+      0 => 'og_group_ref',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-editorial-team field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_editorial_team|file|audio|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_editorial_team|file|document|form';
+  $field_group->group_name = 'group_editorial_team';
+  $field_group->entity_type = 'file';
+  $field_group->bundle = 'document';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Editorial Team',
+    'weight' => '43',
+    'children' => array(
+      0 => 'og_group_ref',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-editorial-team field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_editorial_team|file|document|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_editorial_team|file|image|form';
+  $field_group->group_name = 'group_editorial_team';
+  $field_group->entity_type = 'file';
+  $field_group->bundle = 'image';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Editorial Team',
+    'weight' => '20',
+    'children' => array(
+      0 => 'og_group_ref',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-editorial-team field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_editorial_team|file|image|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_editorial_team|file|video|form';
+  $field_group->group_name = 'group_editorial_team';
+  $field_group->entity_type = 'file';
+  $field_group->bundle = 'video';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Editorial Team',
+    'weight' => '8',
+    'children' => array(
+      0 => 'og_group_ref',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-editorial-team field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_editorial_team|file|video|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_nems_audio_file_category|file|audio|form';
   $field_group->group_name = 'group_nems_audio_file_category';
   $field_group->entity_type = 'file';
@@ -257,6 +365,7 @@ function nems_core_field_group_info() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Editorial Team');
   t('File Attributes');
   t('File Category');
   t('Tags');
