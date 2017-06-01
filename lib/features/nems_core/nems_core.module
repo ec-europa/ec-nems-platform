@@ -380,8 +380,8 @@ function nems_core_form_node_form_alter(&$form, &$form_state, $form_id) {
 /**
  * After build function to change the language options.
  *
- * @see nems_core_form_node_form_alter().
- * @see i18n_node_form_node_form_alter().
+ * @see nems_core_form_node_form_alter
+ * @see i18n_node_form_node_form_alter
  */
 function _nems_core_form_node_form_after_build($form, &$form_state) {
   if (isset($form['language'])) {
