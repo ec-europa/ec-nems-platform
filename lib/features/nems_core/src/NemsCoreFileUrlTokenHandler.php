@@ -1,19 +1,20 @@
 <?php
-// @codingStandardsIgnoreFile
+
+namespace Drupal\nems_core;
 
 /**
  * @file
  * Contains \Drupal\nems_core\NemsCoreFileUrlTokenHandler.
  */
 
-namespace Drupal\nems_core;
+use \Drupal\nexteuropa_token\TokenHandlerInterface;
 
 /**
- * Class UrlTokenHandler.
+ * Class NemsCoreFileUrlTokenHandler.
  *
- * @package Drupal\mbp_sync
+ * @package Drupal\nems_core
  */
-class NemsCoreFileUrlTokenHandler implements \Drupal\nexteuropa_token\TokenHandlerInterface {
+class NemsCoreFileUrlTokenHandler implements TokenHandlerInterface {
 
   /**
    * {@inheritdoc}
