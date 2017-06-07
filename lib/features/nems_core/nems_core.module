@@ -858,7 +858,7 @@ function nems_core_preprocess_feature_set_admin_form(&$variables) {
 }
 
 /**
- * template_preprocess_views_view_fields().
+ * Implements template_preprocess_views_view_fields().
  */
 function nems_core_preprocess_views_view_fields(&$vars) {
   global $language ;
@@ -876,14 +876,21 @@ function nems_core_preprocess_views_view_fields(&$vars) {
           workbench_moderation_node_data($node);
           // Load the propper revision.
           if ($is_revision) {
-            // Isn't there any workbench_moderation functrion for this ?
+            // Isn't there any workbench_moderation function for this ?
             $node = node_load($node->nid, $node->workbench_moderation['my_revision']->vid, TRUE);  
           }
           else {
             $node = workbench_moderation_node_current_load($node);  
           }
           
-          $content = $node->field_nems_core_related_content[$language->language]['0']['value'];
+          if (isset($node->field_nems_core_related_content[$language->language]['0']['safe_value'])) {
+            $content = $node->field_nems_core_related_content[$language->language]['0']['safe_value'];
+          }
+          else {
+           $content = $node->field_nems_core_related_content[$language->language]['0']['value'];
+           $content = check_markup($content, 'full_html', $language->language);
+          }
+          
           $content = '<div class="field-content">' . $content . '</div>';
           // Overwrite the field output.
           $vars['fields']['field_nems_core_related_content']->content = $content;

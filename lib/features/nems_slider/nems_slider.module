@@ -10,8 +10,8 @@ include_once 'nems_slider.features.inc';
  * Implements hook_pathauto_alias_alter().
  */
 function nems_slider_pathauto_alias_alter(&$alias, array &$context) {
-	// NEMS-186 pathauto setting.
-	if ($context['type'] == 'nems_slide') {
-		$alias = '';
-	}
+  // NEMS-186 pathauto setting.
+  if ($context['type'] == 'nems_slide') {
+    $alias = '';
+  }
 }
