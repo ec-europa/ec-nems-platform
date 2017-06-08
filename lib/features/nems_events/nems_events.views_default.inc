@@ -1986,12 +1986,11 @@ function nems_events_views_default_views() {
   /* Display: Upcoming Events simple list */
   $handler = $view->new_display('block', 'Upcoming Events simple list', 'block_events_simple_filters');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'More events';
+  $handler->display->display_options['use_more_text'] = '';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -2022,6 +2021,17 @@ function nems_events_views_default_views() {
   $handler->display->display_options['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'page-events';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
+  /* Sort criterion: Content: Date -  start date (field_nems_event_date) */
+  $handler->display->display_options['sorts']['field_nems_event_date_value']['id'] = 'field_nems_event_date_value';
+  $handler->display->display_options['sorts']['field_nems_event_date_value']['table'] = 'field_data_field_nems_event_date';
+  $handler->display->display_options['sorts']['field_nems_event_date_value']['field'] = 'field_nems_event_date_value';
+  $handler->display->display_options['sorts']['field_nems_event_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

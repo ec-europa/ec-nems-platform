@@ -182,6 +182,7 @@ function nems_core_default_roles_permissions() {
       'view all blocks' => TRUE,
       'view bean page' => TRUE,
       'view bean revisions' => TRUE,
+      'upload webtools custom js' => TRUE,
     ),
   );
 
@@ -250,19 +251,29 @@ function nems_core_default_roles_permissions() {
       'access ecas import users function' => TRUE,
       'administer users' => TRUE,
       'change own username' => TRUE,
+      'assign contributor role' => TRUE,
+      'assign editor role' => TRUE,
+      'assign manage blocks role' => TRUE,
+      'assign manage files role' => TRUE,
+      'assign manage main menu role' => TRUE,
+      'assign manage users role' => TRUE,
+      'assign manage content role' => TRUE,
+      'assign webmaster role' => TRUE,
     ),
   );
 
   // Exported role: publish content.
-  $roles['publish content'] = (object) array(
-    'name' => 'publish content',
+  $roles['manage content'] = (object) array(
+    'name' => 'manage content',
     'weight' => 7,
     'permissions' => array(
       'access administration menu' => TRUE,
       'access administration pages' => TRUE,
       'access content overview' => TRUE,
       'access media browser' => TRUE,
+      'access contextual links' => TRUE,
       'administer content translations' => TRUE,
+      'administer nodes' => TRUE,
       'bypass workbench moderation' => TRUE,
       'create common_page content' => TRUE,
       'create files' => TRUE,
@@ -369,6 +380,8 @@ function nems_core_default_roles_permissions() {
       'access media browser' => TRUE,
       'access site reports' => TRUE,
       'access the block administration page' => TRUE,
+      'access broken links report' => TRUE,
+      'access contextual links' => TRUE,
       'add media from remote sources' => TRUE,
       'add terms in classification' => TRUE,
       'add terms in media_folders' => TRUE,
@@ -406,6 +419,12 @@ function nems_core_default_roles_permissions() {
       'administer workbench moderation' => TRUE,
       'assign contributor role' => TRUE,
       'assign editor role' => TRUE,
+      'assign manage blocks role' => TRUE,
+      'assign manage files role' => TRUE,
+      'assign manage main menu role' => TRUE,
+      'assign manage users role' => TRUE,
+      'assign manage content role' => TRUE,
+      'assign webmaster role' => TRUE,
       'bypass workbench moderation' => TRUE,
       'change own username' => TRUE,
       'configure all block body fields' => TRUE,
@@ -562,6 +581,7 @@ function nems_core_default_roles_permissions() {
       'view revisions' => TRUE,
       'view scheduled content' => TRUE,
       'view the administration theme' => TRUE,
+      'upload webtools custom js' => TRUE,
     ),
   );
 
@@ -576,6 +596,7 @@ function nems_core_default_roles_permissions() {
     'nems_links_categories',
     'nems_picture_gallery_categories',
     'nems_events_categories',
+    'nems_file_categories',
     'nems_call_for_tenders_status',
     'nems_call_for_proposals_status',
     'nems_call_for_externals_status',

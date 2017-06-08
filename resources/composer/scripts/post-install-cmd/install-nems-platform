@@ -10,7 +10,7 @@ TYPE=${TYPE%"-platform"}
 VERSION="~1.0"
 GITIGNORE="lib/.gitignore"
 IGNORES=( "vendor/" "*/$TYPE" "composer.lock" )
-FOLDERS=( "features" "libraries" "modules" "themes" )
+FOLDERS=( "features" "libraries" "modules" )
 
 
 # Expand lib folder with $TYPE-platform.

@@ -17,7 +17,7 @@ function nems_common_page_user_default_permissions() {
       'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );
@@ -27,7 +27,7 @@ function nems_common_page_user_default_permissions() {
     'name' => 'delete any common_page content',
     'roles' => array(
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );
@@ -39,7 +39,7 @@ function nems_common_page_user_default_permissions() {
       'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );
@@ -50,7 +50,7 @@ function nems_common_page_user_default_permissions() {
     'roles' => array(
       'editor' => 'editor',
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );
@@ -62,7 +62,7 @@ function nems_common_page_user_default_permissions() {
       'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );

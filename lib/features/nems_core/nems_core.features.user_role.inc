@@ -35,8 +35,8 @@ function nems_core_user_default_roles() {
   );
 
   // Exported role: publish content.
-  $roles['publish content'] = (object) array(
-    'name' => 'publish content',
+  $roles['manage content'] = (object) array(
+    'name' => 'manage content',
     'weight' => 7,
   );
 

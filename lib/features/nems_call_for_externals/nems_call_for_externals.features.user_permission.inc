@@ -26,7 +26,7 @@ function nems_call_for_externals_user_default_permissions() {
       'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );
@@ -36,7 +36,7 @@ function nems_call_for_externals_user_default_permissions() {
     'name' => 'delete any nems_call_for_externals content',
     'roles' => array(
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );
@@ -48,7 +48,7 @@ function nems_call_for_externals_user_default_permissions() {
       'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );
@@ -68,7 +68,7 @@ function nems_call_for_externals_user_default_permissions() {
     'roles' => array(
       'editor' => 'editor',
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );
@@ -80,7 +80,7 @@ function nems_call_for_externals_user_default_permissions() {
       'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
-      'publish content' => 'publish content',
+      'manage content' => 'manage content',
     ),
     'module' => 'node',
   );
