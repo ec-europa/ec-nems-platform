@@ -36,9 +36,6 @@ projects[features_roles_permissions][version] = "1.2"
 projects[feeds_et][subdir] = "contrib/nems"
 projects[feeds_et][version] = "1.x-dev"
 
-projects[feeds_xpathparser][subdir] = "contrib/nems"
-projects[feeds_xpathparser][version] = "1.1"
-
 projects[insert_block][subdir] = "contrib/nems"
 projects[insert_block][version] = "1.x-dev"
 
