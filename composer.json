@@ -1,6 +1,7 @@
 {
     "name": "ec-europa/ec-nems-platform",
     "description": "Modules, features and theme sourcecode for the nems platform",
+    "license": "EUPL-1.1",
     "require": {
         "php": ">=5.4.0"
     }
