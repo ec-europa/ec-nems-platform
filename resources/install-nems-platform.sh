@@ -2,7 +2,6 @@
 
 MAKE=../../../resources/site.make
 
-
 # If the package is present update the lib source code.
 if [ -d "vendor/ec-europa/ec-nems-platform" ] ; then
 
