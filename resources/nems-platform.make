@@ -32,6 +32,7 @@ projects[eva][version] = "1.3"
 
 projects[features_extra][subdir] = "contrib/nems"
 projects[features_extra][version] = "1.0"
+projects[features_extra][patch][] = patches/features_extra-fe_nodequeue_fix_object_use_as_array.patch
 
 projects[features_roles_permissions][subdir] = "contrib/nems"
 projects[features_roles_permissions][version] = "1.2"

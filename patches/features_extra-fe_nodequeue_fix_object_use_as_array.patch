@@ -1,0 +1,17 @@
+diff --git a/fe_nodequeue.module b/fe_nodequeue.module
+index 0fa6afd..9b86f8d 100644
+--- a/fe_nodequeue.module
++++ b/fe_nodequeue.module
+@@ -133,6 +133,12 @@ function fe_nodequeue_features_revert($module) {
+ 
+   // Revert.
+   foreach ($defaults as $object) {
++
++    // Fix the bug "Cannot use object of type stdclass as array".
++    if ((isset($object)) && (is_object($object))) {
++      $object = (array)$object;
++    }
++
+     if (empty($object['name'])) {
+       continue;
+     }
