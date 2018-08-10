@@ -21,6 +21,10 @@ if [ -d "vendor/ec-europa/ec-nems-platform" ] ; then
   #cp -r vendor/ec-europa/ec-nems-platform/lib/themes/* themes/nems
   cp -f vendor/ec-europa/ec-nems-platform/resources/nems-platform.make ../../../resources/nems-platform.make
 
+  # Create the patches folder.
+  mkdir -p ../../../resources/patches
+  cp -f vendor/ec-europa/ec-nems-platform/resources/patches/* ../../../resources/patches
+
   # Include the nems-platform.make file.
   if ! [ -e $MAKE ] 2> /dev/null && [ -e $MAKE".example" ] ; then
     mv $MAKE".example" $MAKE;
