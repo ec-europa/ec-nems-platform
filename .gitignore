@@ -1,2 +1,4 @@
 vendor/
 composer.*
+.idea/
+.idea/vcs.xml

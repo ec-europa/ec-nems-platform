@@ -15,10 +15,14 @@ if [ -d "vendor/ec-europa/ec-nems-platform" ] ; then
   #mkdir -p modules/custom/nems
   #mkdir -p themes/nems
 
+  # Create clean folders
+  mkdir ../../../resources/patches
+
   # Copy the sources in place.
   cp -r vendor/ec-europa/ec-nems-platform/lib/features/* modules/features/nems
   #cp -r vendor/ec-europa/ec-nems-platform/lib/modules/* modules/custom/nems
   #cp -r vendor/ec-europa/ec-nems-platform/lib/themes/* themes/nems
+  cp -r vendor/ec-europa/ec-nems-platform/resources/patches/* ../../../resources/patches
   cp -f vendor/ec-europa/ec-nems-platform/resources/nems-platform.make ../../../resources/nems-platform.make
 
   # Create the patches folder.
