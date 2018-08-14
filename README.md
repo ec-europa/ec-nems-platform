@@ -15,13 +15,15 @@ you need to add the following to your resources/composer.json file:
 }
 ```
 
-# Upgrade notes for starter kit
+## Upgrade notes for starter kit
 
-To upgrade from versions below 1.3.0 you need to update your subsite NEMS integration. Every susbite with NEMS integration prior to version 1.3.0 has in its repository a integration script in resources/composer/scripts/post-install-cmd/install-nems-platform
+To upgrade from versions below 1.3.0 you need to update your subsite NEMS integration.
+Every susbite with NEMS integration prior to version 1.3.0 has in its repository a integration script in 
+resources/composer/scripts/post-install-cmd/install-nems-platform
 
 You need to edit the script for it to integrate the new fe_nodequeue patch like so:
 
-```sh
+```shell
   # Copy the platform make file.
   cp -f lib/vendor/ec-europa/ec-$TYPE-platform/resources/$TYPE-platform.make resources/$TYPE-platform.make
 
