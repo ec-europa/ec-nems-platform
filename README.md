@@ -18,7 +18,7 @@ you need to add the following to your resources/composer.json file:
 ## Upgrade notes for starter kit
 
 To upgrade from versions below 1.3.0 you need to update your subsite NEMS integration.
-Every susbite with NEMS integration prior to version 1.3.0 has in its repository a integration script in 
+Every subsite with NEMS integration prior to version 1.3.0 has in its repository a integration script in 
 resources/composer/scripts/post-install-cmd/install-nems-platform
 
 You need to edit the script for it to integrate the new fe_nodequeue patch like so:
@@ -31,4 +31,4 @@ You need to edit the script for it to integrate the new fe_nodequeue patch like 
   mkdir -p resources/patches
   cp -r lib/vendor/ec-europa/ec-$TYPE-platform/resources/patches/* resources/patches
 ```
-After you can sun ./bin/phing build-dist to check te integration.
+To check the integration, run ./bin/phing build-dist
