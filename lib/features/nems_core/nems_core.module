@@ -295,9 +295,9 @@ function _nems_core_filefield_source_reference_get_files($filename, $instance = 
  */
 function nems_core_menu() {
   $items['node/%node/%'] = array(
-    'page callback' => 'nems_core_wysiwyg_view_file',
-    'page arguments' => array(2),
-    'access arguments' => array('use media wysiwyg'),
+    'page callback' => '_nems_core_view_subnode',
+    'page arguments' => array(1, 2),
+    'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
 
@@ -343,28 +343,32 @@ function nems_core_admin_menu_output_build(&$content) {
 }
 
 /**
- * Callback: serves images requested by the new file token.
+ * Callback: serves child node requested by the new token.
  *
+ * @param stdClass $node
+ *   Target node.
  * @param string $filetoken
- *   File token passed through url.
+ *   Node token passed through url.
  */
-function nems_core_wysiwyg_view_file($filetoken) {
-  $fid = str_replace(array('[file:', ':url]'), '', $filetoken);
-  $fid = intval($fid);
-  $path = FALSE;
-
-  if (!empty($fid)) {
-    $file = file_load($fid);
-
-    if (!empty($file)) {
-      $path = file_create_url($file->uri);
+function _nems_core_view_subnode($node, $filetoken) {
+  if (!empty($node->type)) {
+    switch ($node->type) {
+      case 'file':
+        if (!empty($node->uri)) {
+          $path = file_create_url($node->uri);
+          drupal_goto($path);
+        }
+        else {
+          drupal_not_found();
+        }
+        break;
+      default:
+        // Native workflow (used in filebrowser).
+        return node_show($node);
     }
   }
-
-  if (!empty($path)) {
-    drupal_goto($path);
-  }
   else {
+    watchdog('nems_core', 'hook_menu with params ($node : %node, \n  $filetoken : %filetoken', array('%node' => $node, '%filetoken' => $filetoken), WATCHDOG_NOTICE);
     drupal_not_found();
   }
 }
