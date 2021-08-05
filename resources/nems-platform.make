@@ -5,9 +5,6 @@ core = 7.x
 ; Contributed modules
 ; ===================
 
-projects[admin_language][subdir] = "contrib/nems"
-projects[admin_language][version] = "1.0-beta4"
-
 projects[block_access][subdir] = "contrib/nems"
 projects[block_access][version] = "1.6"
 projects[block_access][patch][] = "https://www.drupal.org/files/block_access_delete_fix-2039989-2.patch"
