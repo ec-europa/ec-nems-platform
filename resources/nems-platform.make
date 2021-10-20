@@ -60,7 +60,7 @@ projects[owlcarousel][subdir] = "contrib/nems"
 projects[owlcarousel][version] = "1.6"
 
 projects[rabbit_hole][subdir] = "contrib/nems"
-projects[rabbit_hole][version] = "2.24"
+projects[rabbit_hole][version] = "2.26"
 
 projects[remote_stream_wrapper][subdir] = "contrib/nems"
 projects[remote_stream_wrapper][version] = "1.0-rc1"
@@ -72,7 +72,7 @@ projects[taxonomy_access_fix][subdir] = "contrib/nems"
 projects[taxonomy_access_fix][version] = "2.3"
 
 projects[tb_megamenu][subdir] = "contrib/nems"
-projects[tb_megamenu][version] = "1.0-rc2"
+projects[tb_megamenu][version] = "1.0-rc6"
 
 projects[tocify][subdir] = "contrib/nems"
 projects[tocify][version] = "1.0"
