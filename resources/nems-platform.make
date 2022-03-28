@@ -10,10 +10,10 @@ projects[block_access][version] = "1.6"
 projects[block_access][patch][] = "https://www.drupal.org/files/block_access_delete_fix-2039989-2.patch"
 
 projects[block_class][subdir] = "contrib/nems"
-projects[block_class][version] = "2.3"
+projects[block_class][version] = "2.4"
 
 projects[blockreference][subdir] = "contrib/nems"
-projects[blockreference][version] = "2.4"
+projects[blockreference][version] = "2.7"
 
 projects[ckeditor_tabber][subdir] = "contrib/nems"
 projects[ckeditor_tabber][version] = "1.4"
@@ -22,10 +22,10 @@ projects[collapsiblock][subdir] = "contrib/nems"
 projects[collapsiblock][version] = "1.1"
 
 projects[entityconnect][subdir] = "contrib/nems"
-projects[entityconnect][version] = "2.0-rc1"
+projects[entityconnect][version] = "2.0-rc2"
 
 projects[eva][subdir] = "contrib/nems"
-projects[eva][version] = "1.3"
+projects[eva][version] = "1.4"
 
 projects[features_extra][subdir] = "contrib/nems"
 projects[features_extra][version] = "1.0"
@@ -51,7 +51,7 @@ projects[menu_admin_per_menu][subdir] = "contrib/nems"
 projects[menu_admin_per_menu][version] = "1.1"
 
 projects[multiform][subdir] = "contrib/nems"
-projects[multiform][version] = "1.3"
+projects[multiform][version] = "1.6"
 
 projects[nodeblock][subdir] = "contrib/nems"
 projects[nodeblock][version] = "1.7"
@@ -66,16 +66,16 @@ projects[remote_stream_wrapper][subdir] = "contrib/nems"
 projects[remote_stream_wrapper][version] = "1.0-rc1"
 
 projects[role_delegation][subdir] = "contrib/nems"
-projects[role_delegation][version] = "1.1"
+projects[role_delegation][version] = "1.3"
 
 projects[taxonomy_access_fix][subdir] = "contrib/nems"
-projects[taxonomy_access_fix][version] = "2.3"
+projects[taxonomy_access_fix][version] = "2.4"
 
 projects[tb_megamenu][subdir] = "contrib/nems"
 projects[tb_megamenu][version] = "1.0-rc6"
 
 projects[tocify][subdir] = "contrib/nems"
-projects[tocify][version] = "1.0"
+projects[tocify][version] = "1.1"
 
 projects[views_block_filter_block][subdir] = "contrib/nems"
 projects[views_block_filter_block][version] = "1.0-beta2"
